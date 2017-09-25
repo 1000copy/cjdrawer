@@ -931,123 +931,123 @@ open class DrawerController: UIViewController, UIGestureRecognizerDelegate {
     - parameter completion: The block called when the animation is finsihed.
     
     */
-    open func setCenter(_ newCenterViewController: UIViewController, withCloseAnimation animated: Bool, completion: ((Bool) -> Void)?) {
-        var animated = animated
-
-        if self.openSide == .none {
-            // If a side drawer isn't open, there is nothing to animate
-            animated = false
-        }
-        
-        let forwardAppearanceMethodsToCenterViewController = (self.centerViewController! == newCenterViewController) == false
-        self.setCenter(newCenterViewController, animated: animated)
-        
-        if animated {
-            self.updateDrawerVisualState(for: self.openSide, percentVisible: 1.0)
-            
-            if forwardAppearanceMethodsToCenterViewController {
-                self.centerViewController!.beginAppearanceTransition(true, animated: animated)
-            }
-            
-            self.closeDrawer(animated: animated, completion: { (finished) in
-                if forwardAppearanceMethodsToCenterViewController {
-                    self.centerViewController!.endAppearanceTransition()
-                    self.centerViewController!.didMove(toParentViewController: self)
-                }
-                
-                completion?(finished)
-            })
-        } else {
-            completion?(true)
-        }
-    }
-    
-    /**
-    Sets the new `centerViewController`.
-    
-    This sets the view controller and will automatically adjust the frame based on the current state of the drawer controller. If `closeFullAnimated` is YES, the current center view controller will animate off the screen, the new center view controller will then be set, followed by the drawer closing across the full width of the screen.
-    
-    - parameter newCenterViewController: The new `centerViewController`.
-    - parameter fullCloseAnimated: Determines whether the drawer should be closed with an animation.
-    - parameter completion: The block called when the animation is finsihed.
-    
-    */
-    open func setCenter(_ newCenterViewController: UIViewController, withFullCloseAnimation animated: Bool, completion: ((Bool) -> Void)?) {
-        if self.openSide != .none && animated {
-            let forwardAppearanceMethodsToCenterViewController = (self.centerViewController! == newCenterViewController) == false
-            let sideDrawerViewController = self.sideDrawerViewController(for: self.openSide)
-            
-            var targetClosePoint: CGFloat = 0.0
-            
-            if self.openSide == .right {
-                targetClosePoint = -self.childControllerContainerView.bounds.width
-            } else if self.openSide == .left {
-                targetClosePoint = self.childControllerContainerView.bounds.width
-            }
-            
-            let distance: CGFloat = abs(self.centerContainerView.frame.origin.x - targetClosePoint)
-            let firstDuration = self.animationDuration(forAnimationDistance: distance)
-            
-            var newCenterRect = self.centerContainerView.frame
-            
-            self.animatingDrawer = animated
-            
-            let oldCenterViewController = self.centerViewController
-            
-            if forwardAppearanceMethodsToCenterViewController {
-                oldCenterViewController?.beginAppearanceTransition(false, animated: animated)
-            }
-            
-            newCenterRect.origin.x = targetClosePoint
-            
-            UIView.animate(withDuration: firstDuration, delay: 0.0, usingSpringWithDamping: self.drawerDampingFactor, initialSpringVelocity: distance / self.animationVelocity, options: [], animations: { () -> Void in
-                self.centerContainerView.frame = newCenterRect
-                sideDrawerViewController?.view.frame = self.childControllerContainerView.bounds
-                }, completion: { (finished) -> Void in
-                    let oldCenterRect = self.centerContainerView.frame
-                    self.setCenter(newCenterViewController, animated: animated)
-                    self.centerContainerView.frame = oldCenterRect
-                    self.updateDrawerVisualState(for: self.openSide, percentVisible: 1.0)
-                    
-                    if forwardAppearanceMethodsToCenterViewController {
-                        oldCenterViewController?.endAppearanceTransition()
-                        self.centerViewController?.beginAppearanceTransition(true, animated: animated)
-                    }
-                    
-                    sideDrawerViewController?.beginAppearanceTransition(false, animated: animated)
-                    
-                    UIView.animate(withDuration: self.animationDuration(forAnimationDistance: self.childControllerContainerView.bounds.width), delay: DrawerDefaultFullAnimationDelay, usingSpringWithDamping: self.drawerDampingFactor, initialSpringVelocity: self.childControllerContainerView.bounds.width / self.animationVelocity, options: [], animations: { () -> Void in
-                        self.centerContainerView.frame = self.childControllerContainerView.bounds
-                        self.updateDrawerVisualState(for: self.openSide, percentVisible: 0.0)
-                        }, completion: { (finished) -> Void in
-                            if forwardAppearanceMethodsToCenterViewController {
-                                self.centerViewController?.endAppearanceTransition()
-                                self.centerViewController?.didMove(toParentViewController: self)
-                            }
-                            
-                            sideDrawerViewController?.endAppearanceTransition()
-                            self.resetDrawerVisualState(for: self.openSide)
-                            
-                            if sideDrawerViewController != nil {
-                                sideDrawerViewController!.view.frame = sideDrawerViewController!.evo_visibleDrawerFrame
-                            }
-                            
-                            self.openSide = .none
-                            self.animatingDrawer = false
-                            
-                            completion?(finished)
-                    })
-            })
-        } else {
-            self.setCenter(newCenterViewController, animated: animated)
-            
-            if self.openSide != .none {
-                self.closeDrawer(animated: animated, completion: completion)
-            } else if completion != nil {
-                completion!(true)
-            }
-        }
-    }
+//    open func setCenter(_ newCenterViewController: UIViewController, withCloseAnimation animated: Bool, completion: ((Bool) -> Void)?) {
+//        var animated = animated
+//
+//        if self.openSide == .none {
+//            // If a side drawer isn't open, there is nothing to animate
+//            animated = false
+//        }
+//
+//        let forwardAppearanceMethodsToCenterViewController = (self.centerViewController! == newCenterViewController) == false
+//        self.setCenter(newCenterViewController, animated: animated)
+//
+//        if animated {
+//            self.updateDrawerVisualState(for: self.openSide, percentVisible: 1.0)
+//
+//            if forwardAppearanceMethodsToCenterViewController {
+//                self.centerViewController!.beginAppearanceTransition(true, animated: animated)
+//            }
+//
+//            self.closeDrawer(animated: animated, completion: { (finished) in
+//                if forwardAppearanceMethodsToCenterViewController {
+//                    self.centerViewController!.endAppearanceTransition()
+//                    self.centerViewController!.didMove(toParentViewController: self)
+//                }
+//
+//                completion?(finished)
+//            })
+//        } else {
+//            completion?(true)
+//        }
+//    }
+//
+//    /**
+//    Sets the new `centerViewController`.
+//
+//    This sets the view controller and will automatically adjust the frame based on the current state of the drawer controller. If `closeFullAnimated` is YES, the current center view controller will animate off the screen, the new center view controller will then be set, followed by the drawer closing across the full width of the screen.
+//
+//    - parameter newCenterViewController: The new `centerViewController`.
+//    - parameter fullCloseAnimated: Determines whether the drawer should be closed with an animation.
+//    - parameter completion: The block called when the animation is finsihed.
+//
+//    */
+//    open func setCenter(_ newCenterViewController: UIViewController, withFullCloseAnimation animated: Bool, completion: ((Bool) -> Void)?) {
+//        if self.openSide != .none && animated {
+//            let forwardAppearanceMethodsToCenterViewController = (self.centerViewController! == newCenterViewController) == false
+//            let sideDrawerViewController = self.sideDrawerViewController(for: self.openSide)
+//
+//            var targetClosePoint: CGFloat = 0.0
+//
+//            if self.openSide == .right {
+//                targetClosePoint = -self.childControllerContainerView.bounds.width
+//            } else if self.openSide == .left {
+//                targetClosePoint = self.childControllerContainerView.bounds.width
+//            }
+//
+//            let distance: CGFloat = abs(self.centerContainerView.frame.origin.x - targetClosePoint)
+//            let firstDuration = self.animationDuration(forAnimationDistance: distance)
+//
+//            var newCenterRect = self.centerContainerView.frame
+//
+//            self.animatingDrawer = animated
+//
+//            let oldCenterViewController = self.centerViewController
+//
+//            if forwardAppearanceMethodsToCenterViewController {
+//                oldCenterViewController?.beginAppearanceTransition(false, animated: animated)
+//            }
+//
+//            newCenterRect.origin.x = targetClosePoint
+//
+//            UIView.animate(withDuration: firstDuration, delay: 0.0, usingSpringWithDamping: self.drawerDampingFactor, initialSpringVelocity: distance / self.animationVelocity, options: [], animations: { () -> Void in
+//                self.centerContainerView.frame = newCenterRect
+//                sideDrawerViewController?.view.frame = self.childControllerContainerView.bounds
+//                }, completion: { (finished) -> Void in
+//                    let oldCenterRect = self.centerContainerView.frame
+//                    self.setCenter(newCenterViewController, animated: animated)
+//                    self.centerContainerView.frame = oldCenterRect
+//                    self.updateDrawerVisualState(for: self.openSide, percentVisible: 1.0)
+//
+//                    if forwardAppearanceMethodsToCenterViewController {
+//                        oldCenterViewController?.endAppearanceTransition()
+//                        self.centerViewController?.beginAppearanceTransition(true, animated: animated)
+//                    }
+//
+//                    sideDrawerViewController?.beginAppearanceTransition(false, animated: animated)
+//
+//                    UIView.animate(withDuration: self.animationDuration(forAnimationDistance: self.childControllerContainerView.bounds.width), delay: DrawerDefaultFullAnimationDelay, usingSpringWithDamping: self.drawerDampingFactor, initialSpringVelocity: self.childControllerContainerView.bounds.width / self.animationVelocity, options: [], animations: { () -> Void in
+//                        self.centerContainerView.frame = self.childControllerContainerView.bounds
+//                        self.updateDrawerVisualState(for: self.openSide, percentVisible: 0.0)
+//                        }, completion: { (finished) -> Void in
+//                            if forwardAppearanceMethodsToCenterViewController {
+//                                self.centerViewController?.endAppearanceTransition()
+//                                self.centerViewController?.didMove(toParentViewController: self)
+//                            }
+//
+//                            sideDrawerViewController?.endAppearanceTransition()
+//                            self.resetDrawerVisualState(for: self.openSide)
+//
+//                            if sideDrawerViewController != nil {
+//                                sideDrawerViewController!.view.frame = sideDrawerViewController!.evo_visibleDrawerFrame
+//                            }
+//
+//                            self.openSide = .none
+//                            self.animatingDrawer = false
+//
+//                            completion?(finished)
+//                    })
+//            })
+//        } else {
+//            self.setCenter(newCenterViewController, animated: animated)
+//
+//            if self.openSide != .none {
+//                self.closeDrawer(animated: animated, completion: completion)
+//            } else if completion != nil {
+//                completion!(true)
+//            }
+//        }
+//    }
     
     // MARK: - Bounce Methods
     
@@ -1270,12 +1270,12 @@ open class DrawerController: UIViewController, UIGestureRecognizerDelegate {
                         if drawerSide != self.openSide {
                             sideDrawerViewController!.endAppearanceTransition()
                         }
-                        
+
                         self.openSide = drawerSide
-                        
+
                         self.resetDrawerVisualState(for: drawerSide)
                         self.animatingDrawer = false
-                        
+//
                         completion?(finished)
                 })
             }
