@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		634707FF1E17F213001C31D2 /* DrawerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634707FE1E17F213001C31D2 /* DrawerSegue.swift */; };
+		634707FF1E17F213001C31D2 /* _DrawerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634707FE1E17F213001C31D2 /* _DrawerSegue.swift */; };
 		6F0CB8CE1F7900820045A775 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0CB8CD1F7900820045A775 /* AppDelegate.swift */; };
 		6F0CB8D01F7900820045A775 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0CB8CF1F7900820045A775 /* ViewController.swift */; };
 		6F0CB8D31F7900820045A775 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F0CB8D11F7900820045A775 /* Main.storyboard */; };
 		6F0CB8D51F7900820045A775 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F0CB8D41F7900820045A775 /* Assets.xcassets */; };
 		6F0CB8D81F7900820045A775 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F0CB8D61F7900820045A775 /* LaunchScreen.storyboard */; };
-		FAEF013C1AFEE4FF00DFDF7F /* DrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = FAEF013B1AFEE4FF00DFDF7F /* DrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FAEF01561AFEE65200DFDF7F /* AnimatedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF01521AFEE65200DFDF7F /* AnimatedMenuButton.swift */; };
-		FAEF01571AFEE65200DFDF7F /* DrawerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF01531AFEE65200DFDF7F /* DrawerBarButtonItem.swift */; };
+		FAEF013C1AFEE4FF00DFDF7F /* _DrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = FAEF013B1AFEE4FF00DFDF7F /* _DrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAEF01561AFEE65200DFDF7F /* _AnimatedMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF01521AFEE65200DFDF7F /* _AnimatedMenuButton.swift */; };
+		FAEF01571AFEE65200DFDF7F /* _DrawerBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF01531AFEE65200DFDF7F /* _DrawerBarButtonItem.swift */; };
 		FAEF01581AFEE65200DFDF7F /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF01541AFEE65200DFDF7F /* DrawerController.swift */; };
-		FAEF01591AFEE65200DFDF7F /* DrawerVisualState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF01551AFEE65200DFDF7F /* DrawerVisualState.swift */; };
+		FAEF01591AFEE65200DFDF7F /* _DrawerVisualState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF01551AFEE65200DFDF7F /* _DrawerVisualState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		634707FE1E17F213001C31D2 /* DrawerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerSegue.swift; sourceTree = "<group>"; };
+		634707FE1E17F213001C31D2 /* _DrawerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _DrawerSegue.swift; sourceTree = "<group>"; };
 		6F0CB8CB1F7900810045A775 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F0CB8CD1F7900820045A775 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F0CB8CF1F7900820045A775 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,11 +41,11 @@
 		6F0CB8D91F7900820045A775 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAEF01361AFEE4FF00DFDF7F /* DrawerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DrawerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEF013A1AFEE4FF00DFDF7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAEF013B1AFEE4FF00DFDF7F /* DrawerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawerController.h; sourceTree = "<group>"; };
-		FAEF01521AFEE65200DFDF7F /* AnimatedMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedMenuButton.swift; sourceTree = "<group>"; };
-		FAEF01531AFEE65200DFDF7F /* DrawerBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerBarButtonItem.swift; sourceTree = "<group>"; };
+		FAEF013B1AFEE4FF00DFDF7F /* _DrawerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _DrawerController.h; sourceTree = "<group>"; };
+		FAEF01521AFEE65200DFDF7F /* _AnimatedMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _AnimatedMenuButton.swift; sourceTree = "<group>"; };
+		FAEF01531AFEE65200DFDF7F /* _DrawerBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _DrawerBarButtonItem.swift; sourceTree = "<group>"; };
 		FAEF01541AFEE65200DFDF7F /* DrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		FAEF01551AFEE65200DFDF7F /* DrawerVisualState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerVisualState.swift; sourceTree = "<group>"; };
+		FAEF01551AFEE65200DFDF7F /* _DrawerVisualState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _DrawerVisualState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +100,12 @@
 		FAEF01381AFEE4FF00DFDF7F /* DrawerController */ = {
 			isa = PBXGroup;
 			children = (
-				FAEF01521AFEE65200DFDF7F /* AnimatedMenuButton.swift */,
-				FAEF01531AFEE65200DFDF7F /* DrawerBarButtonItem.swift */,
-				FAEF013B1AFEE4FF00DFDF7F /* DrawerController.h */,
 				FAEF01541AFEE65200DFDF7F /* DrawerController.swift */,
-				634707FE1E17F213001C31D2 /* DrawerSegue.swift */,
-				FAEF01551AFEE65200DFDF7F /* DrawerVisualState.swift */,
+				634707FE1E17F213001C31D2 /* _DrawerSegue.swift */,
+				FAEF013B1AFEE4FF00DFDF7F /* _DrawerController.h */,
+				FAEF01521AFEE65200DFDF7F /* _AnimatedMenuButton.swift */,
+				FAEF01531AFEE65200DFDF7F /* _DrawerBarButtonItem.swift */,
+				FAEF01551AFEE65200DFDF7F /* _DrawerVisualState.swift */,
 				FAEF01391AFEE4FF00DFDF7F /* Supporting Files */,
 			);
 			path = DrawerController;
@@ -126,7 +126,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAEF013C1AFEE4FF00DFDF7F /* DrawerController.h in Headers */,
+				FAEF013C1AFEE4FF00DFDF7F /* _DrawerController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,11 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAEF01591AFEE65200DFDF7F /* DrawerVisualState.swift in Sources */,
-				FAEF01561AFEE65200DFDF7F /* AnimatedMenuButton.swift in Sources */,
-				FAEF01571AFEE65200DFDF7F /* DrawerBarButtonItem.swift in Sources */,
+				FAEF01591AFEE65200DFDF7F /* _DrawerVisualState.swift in Sources */,
+				FAEF01561AFEE65200DFDF7F /* _AnimatedMenuButton.swift in Sources */,
+				FAEF01571AFEE65200DFDF7F /* _DrawerBarButtonItem.swift in Sources */,
 				FAEF01581AFEE65200DFDF7F /* DrawerController.swift in Sources */,
-				634707FF1E17F213001C31D2 /* DrawerSegue.swift in Sources */,
+				634707FF1E17F213001C31D2 /* _DrawerSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
