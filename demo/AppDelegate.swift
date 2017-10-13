@@ -27,8 +27,6 @@
  class DrawerBase : DrawerController{
     init(_ center : UIViewController,_ left : UIViewController,_ right : UIViewController){
         super.init(centerViewController: center, leftDrawerViewController: left, rightDrawerViewController: right)
-        openDrawerGestureModeMask=OpenDrawerGestureMode.panningCenterView
-        closeDrawerGestureModeMask=CloseDrawerGestureMode.all;
     }
     // 从入门到入门：
     // 1. What exactly is init coder aDecoder?
