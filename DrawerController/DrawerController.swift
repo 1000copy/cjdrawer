@@ -1,4 +1,5 @@
 import UIKit
+// code imple
 open class DrawerController: UIViewController {
     fileprivate var _centerViewController: UIViewController?
     fileprivate var _leftDrawerViewController: UIViewController?
@@ -84,7 +85,6 @@ open class DrawerController: UIViewController {
             self.centerContainerView.layer.shadowPath = UIBezierPath(rect: self.centerContainerView.bounds).cgPath
         }
     }
-
     open func toggleLeftDrawerSide(animated: Bool, completion: ((Bool) -> Void)?) {
         self.toggleDrawerSide(.left, animated: animated, completion: completion)
     }
@@ -112,7 +112,7 @@ open class DrawerController: UIViewController {
             newFrame = view.frame
             newFrame.size.width = _leftDrawerWidth
             vc.view.frame = newFrame
-//            vc.view.frame = vc.evo_visibleDrawerFrame
+            //            vc.view.frame = vc.evo_visibleDrawerFrame
         }
         func panRight(_ view : UIView,_ value : CGFloat){
             var newFrame: CGRect
@@ -135,7 +135,6 @@ open class DrawerController: UIViewController {
         if vc != nil {
             self.addChildViewController(vc!)
             vc!.didMove(toParentViewController: self)
-            
             self.childControllerContainerView.addSubview(vc!.view)
             self.childControllerContainerView.sendSubview(toBack: vc!.view)
             vc!.view.isHidden = true
@@ -170,3 +169,4 @@ open class DrawerController: UIViewController {
         case left
     }
 }
+

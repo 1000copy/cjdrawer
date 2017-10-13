@@ -1,8 +1,6 @@
  import UIKit
  import DrawerController
- 
  var drawerController : DrawerPage?
- 
  @UIApplicationMain
  class AppDelegate: UIResponder, UIApplicationDelegate {
     var window : UIWindow?
@@ -75,7 +73,7 @@
         drawerController?.toggleLeftDrawerSide(animated: true, completion: nil)
     }
     @objc func buttonAction1(_ sender:UIButton!){
-//        drawerController?.toggleRightDrawerSide(animated: true, completion: nil)
+        //        drawerController?.toggleRightDrawerSide(animated: true, completion: nil)
     }
  }
-
+ 
